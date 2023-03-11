@@ -6,3 +6,16 @@ audio.src =
 document.body.addEventListener("mousemove", function () {
   audio.play();
 });
+
+document.body.addEventListener("keypress", (event) => {
+  audio.play();
+});
+
+document.body.addEventListener("touchstart", (event) => {
+  audio.play();
+});
+
+document.body.addEventListener("mousedown", (event) => {
+  audio.play();
+});
+
