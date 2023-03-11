@@ -18,4 +18,3 @@ document.body.addEventListener("touchstart", (event) => {
 document.body.addEventListener("mousedown", (event) => {
   audio.play();
 });
-
