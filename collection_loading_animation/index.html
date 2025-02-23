@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hoàng Minh Thanh - Motivation Loading Animation</title>
+  <link rel="stylesheet" href="./src/normalize.css" />
+  <style>
+    canvas {
+      width: 100%;
+      height: 100%;
+    }
+
+    body {
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- partial:index.partial.html -->
+  <script id="shader-fs" type="x-shader/x-fragment">
+    #ifdef GL_ES
+      precision highp float;
+      #endif
+    void main(void) {
+     gl_FragColor = vec4(0.4, 0.6, 0.8, 1.0);
+    }
+</script>
+
+  <script id="shader-vs" type="x-shader/x-vertex">
+  attribute vec3 vertexPosition;
+
+uniform mat4 modelViewMatrix;
+uniform mat4 perspectiveMatrix;
+
+void main(void) {
+  gl_Position = perspectiveMatrix * modelViewMatrix * vec4(  vertexPosition, 1.0);
+}
+</script>
+
+  <canvas id="webgl-canvas"></canvas>
+  <audio autoplay="autoplay" src="">
+    The "audio" tag is not supported by your browser.
+  </audio>
+  <!-- partial -->
+  <script src="./src/main.ts"></script>
+  <script src="./src/audio.ts"></script>
+</body>
+
+</html>
